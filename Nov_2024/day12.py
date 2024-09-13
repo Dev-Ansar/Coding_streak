@@ -116,3 +116,19 @@ else:
     print("No, it's not a palindrome")
 
 
+'''
+Key takeaway for today
+Here are today's key takeaways:
+Handling Non-Alphanumerics: Use isalnum() to ignore spaces, punctuation, and special characters efficiently.
+
+Palindrome Definition: A string that reads the same backward as forward, ignoring spaces and special characters.
+
+String slicing with [::-1] creates a new reversed sequence, leading to O(n) space complexity.
+
+The two-pointer approach operates directly on the original sequence, requiring only constant space (O(1)), as no new sequence is created.
+
+Slicing logic: Slicing creates a new sequence by iterating over the original in a specified range. When using [::-1], 
+it iterates from the end of the sequence to the beginning, creating a reversed copy.
+
+The two-pointer method is more space-efficient compared to slicing, especially when space is a concern in palindrome checking or similar problems
+'''
