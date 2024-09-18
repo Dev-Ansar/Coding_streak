@@ -10,20 +10,25 @@ Output: [1, 3, 12, 0, 0]
 
 '''
 
-def moveZeroes(nums):
-    nonZeroIndex = 0  # Pointer to place the next non-zero element
-    
-    # Step 1: Move all non-zero elements to the front
-    for i in range(len(nums)):
-        if nums[i] != 0:
-            nums[nonZeroIndex] = nums[i]
-            nonZeroIndex += 1
-    
-    # Step 2: Fill the remaining array with 0s
-    for i in range(nonZeroIndex, len(nums)):
-        nums[i] = 0
+input_arr = [0, 1, 0, 3, 12] 
 
-# Example usage
-nums = [0, 1, 0, 3, 12]
-moveZeroes(nums)
-print(nums)  # Output: [1, 3, 12, 0, 0]
+curr_ptr = 0
+zero_ptr = 0
+non_zero_ptr = 0
+while (curr_ptr < len(input_arr)):
+    if(input_arr[zero_ptr] != 0 and input_arr[curr_ptr] == 0):
+        #print('it came here zero')
+        zero_ptr = curr_ptr
+    elif(input_arr[non_zero_ptr] == 0 and input_arr[curr_ptr]!= 0):
+        #print('it came here non zero')
+        non_zero_ptr = curr_ptr
+
+    if (input_arr[zero_ptr] == 0 and input_arr[non_zero_ptr] != 0):
+        print('it came here')
+        input_arr[zero_ptr], input_arr[non_zero_ptr] = input_arr[non_zero_ptr], input_arr[zero_ptr]
+        
+    else:
+        print('increment')
+        curr_ptr +=1
+print(input_arr)
+
